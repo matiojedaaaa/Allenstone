@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Allen Stone · Marmolería</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="Allen Stone" class="logo"/>
+    <p>Mármoles y superficies premium · Allen, Río Negro</p>
+  </header>
+
+  <main>
+    <section id="catalogo">
+      <h2>Catálogo de Piedras</h2>
+      <div class="grid"></div>
+    </section>
+
+    <section id="presupuestador">
+      <h2>Presupuestador</h2>
+      <div class="form-group">
+        <label for="piedra">Elegí piedra:</label>
+        <select id="piedra"></select>
+      </div>
+      <div class="form-group">
+        <label>Ancho (cm): <input type="number" id="ancho" min="0"/></label>
+        <label>Largo (cm): <input type="number" id="largo" min="0"/></label>
+      </div>
+      <button id="calcular">Calcular Precio</button>
+
+      <div id="resultado"></div>
+      <button id="whatsappCompra">Comprar vía WhatsApp</button>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería de Trabajos</h2>
+      <div class="galeria-grid">
+        <!-- fotos de trabajos -->
+      </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/5491130916842" class="whatsapp-float" target="_blank">WhatsApp</a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+const piedras = [
+  ["Negro Boreal",258000],["Negro Brasil",385000],["Blanco Dallas",360000],
+  ["Blanco Fortaleza",312000],["Negro Glitter",546000],["Blanco Glitter",546000],
+  ["Terrazo White",546000],["Gris Mara",227000],["Gris Perla",227000],
+  ["Blanco Icon",817000],["Venatino",817000],["Blanco Paloma",610000],
+  ["Gris Topo",610000],["Gris Zen",777000],["Calacatta Gold",1136000],
+  ["Calacatta Clasic",1136000],["Bianco Silver",1392000],["Nero Marquina",1392000]
+];
+
+const selPiedra = document.getElementById('piedra');
+piedras.forEach(p => {
+  const o = document.createElement('option');
+  o.value = p[1];
+  o.textContent = `${p[0]} – $${p[1].toLocaleString()} /m²`;
+  selPiedra.appendChild(o);
+});
+
+document.getElementById('calcular').addEventListener('click', () => {
+  const precioM2 = Number(selPiedra.value);
+  const ancho = Number(document.getElementById('ancho').value);
+  const largo = Number(document.getElementById('largo').value);
+  if(!precioM2 || !ancho || !largo){
+    document.getElementById('resultado').innerText = 'Completá todos los campos';
+    return;
+  }
+  const area = (ancho * largo) / 10000;
+  const precio = area * precioM2;
+  const texto = `🔹 Estimado: $${precio.toLocaleString()} (Seña 50%: $${(precio/2).toLocaleString()})`;
+  document.getElementById('resultado').innerText = texto;
+
+  const msg = encodeURIComponent(`Hola Allen Stone, quiero comprar ${selPiedra.options[selPiedra.selectedIndex].text} para ancho ${ancho} cm x largo ${largo} cm. Precio estimado: $${precio.toLocaleString()}`);
+  document.getElementById('whatsappCompra').onclick = () => {
+    window.open(`https://wa.me/5491130916842?text=${msg}`, '_blank');
+  };
+});

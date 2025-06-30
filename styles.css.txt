@@ -1,0 +1,15 @@
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family:Arial,sans-serif; background:#121212; color:#eee; line-height:1.6; }
+header { text-align:center; padding:2rem; }
+.logo { max-width:150px; }
+main { padding:2rem; max-width:900px; margin:0 auto; }
+h2 { margin-top:2rem; color:#fff; }
+.grid, .galeria-grid { display:grid; gap:1rem; grid-template-columns: repeat(auto-fill,minmax(140px,1fr)); }
+.card { background:#1e1e1e; padding:1rem; border-radius:8px; text-align:center; }
+button { background:#2e7d32; color:#fff; border:none; padding:0.8rem 1.2rem; border-radius:4px; cursor:pointer; margin-top:1rem; }
+button:hover { background:#27662a; }
+.whatsapp-float {
+  position:fixed; bottom:20px; right:20px;
+  background:#25d366; color:#fff; padding:12px 16px;
+  border-radius:50px; text-decoration:none; font-weight:bold;
+}
